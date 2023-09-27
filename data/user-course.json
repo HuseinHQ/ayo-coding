@@ -1,0 +1,82 @@
+[
+  {
+    "UserId": 3,
+    "CourseId": 5
+  },
+  {
+    "UserId": 2,
+    "CourseId": 9
+  },
+  {
+    "UserId": 1,
+    "CourseId": 7
+  },
+  {
+    "UserId": 4,
+    "CourseId": 2
+  },
+  {
+    "UserId": 3,
+    "CourseId": 8
+  },
+  {
+    "UserId": 1,
+    "CourseId": 1
+  },
+  {
+    "UserId": 2,
+    "CourseId": 10
+  },
+  {
+    "UserId": 4,
+    "CourseId": 4
+  },
+  {
+    "UserId": 5,
+    "CourseId": 6
+  },
+  {
+    "UserId": 1,
+    "CourseId": 3
+  },
+  {
+    "UserId": 3,
+    "CourseId": 7
+  },
+  {
+    "UserId": 5,
+    "CourseId": 2
+  },
+  {
+    "UserId": 2,
+    "CourseId": 9
+  },
+  {
+    "UserId": 4,
+    "CourseId": 1
+  },
+  {
+    "UserId": 3,
+    "CourseId": 5
+  },
+  {
+    "UserId": 1,
+    "CourseId": 8
+  },
+  {
+    "UserId": 5,
+    "CourseId": 3
+  },
+  {
+    "UserId": 2,
+    "CourseId": 6
+  },
+  {
+    "UserId": 1,
+    "CourseId": 10
+  },
+  {
+    "UserId": 4,
+    "CourseId": 4
+  }
+]

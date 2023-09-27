@@ -1,0 +1,37 @@
+[
+  {
+    "username": "john_doe",
+    "email": "john.doe@example.com",
+    "password": "securepassword1",
+    "role": "user",
+    "profilePicture": "http://blabla.com/john_doe.jpg"
+  },
+  {
+    "username": "alice_smith",
+    "email": "alice.smith@example.com",
+    "password": "strongpassword2",
+    "role": "user",
+    "profilePicture": "http://blabla.com/alice_smith.jpg"
+  },
+  {
+    "username": "admin_user",
+    "email": "admin.user@example.com",
+    "password": "adminpassword",
+    "role": "admin",
+    "profilePicture": "http://blabla.com/admin_user.jpg"
+  },
+  {
+    "username": "tech_guru",
+    "email": "tech.guru@example.com",
+    "password": "techpassword",
+    "role": "user",
+    "profilePicture": "http://blabla.com/tech_guru.jpg"
+  },
+  {
+    "username": "jane_davis",
+    "email": "jane.davis@example.com",
+    "password": "secure1234",
+    "role": "user",
+    "profilePicture": "http://blabla.com/jane_davis.jpg"
+  }
+]

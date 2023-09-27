@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Web Development Basics",
+    "description": "Learn the fundamental concepts of web development.",
+    "price": "200000",
+    "thumbnail": "http://blabla.com/web_dev_basics.jpg",
+    "CategoryId": 1
+  },
+  {
+    "title": "Python for Beginners",
+    "description": "A beginner-friendly introduction to Python programming.",
+    "price": "150000",
+    "thumbnail": "http://blabla.com/python_beginners.jpg",
+    "CategoryId": 2
+  },
+  {
+    "title": "Advanced JavaScript Techniques",
+    "description": "Explore advanced techniques in JavaScript programming.",
+    "price": "250000",
+    "thumbnail": "http://blabla.com/advanced_js.jpg",
+    "CategoryId": 3
+  },
+  {
+    "title": "Introduction to Data Science",
+    "description": "Discover the basics of data science and analysis.",
+    "price": "180000",
+    "thumbnail": "http://blabla.com/data_science_intro.jpg",
+    "CategoryId": 4
+  },
+  {
+    "title": "Mobile App Development with React Native",
+    "description": "Build cross-platform mobile apps with React Native.",
+    "price": "300000",
+    "thumbnail": "http://blabla.com/react_native_apps.jpg",
+    "CategoryId": 5
+  },
+  {
+    "title": "Java Programming Mastery",
+    "description": "Master the Java programming language and its features.",
+    "price": "280000",
+    "thumbnail": "http://blabla.com/java_mastery.jpg",
+    "CategoryId": 1
+  },
+  {
+    "title": "Responsive Web Design with CSS3",
+    "description": "Learn to design responsive websites using CSS3.",
+    "price": "220000",
+    "thumbnail": "http://blabla.com/css3_responsive.jpg",
+    "CategoryId": 2
+  },
+  {
+    "title": "Introduction to SQL Databases",
+    "description": "Understand the basics of SQL databases and query languages.",
+    "price": "240000",
+    "thumbnail": "http://blabla.com/sql_intro.jpg",
+    "CategoryId": 3
+  },
+  {
+    "title": "Machine Learning Fundamentals",
+    "description": "Explore the fundamental concepts of machine learning.",
+    "price": "350000",
+    "thumbnail": "http://blabla.com/machine_learning_fundamentals.jpg",
+    "CategoryId": 4
+  },
+  {
+    "title": "Full-Stack Development with MERN",
+    "description": "Build full-stack applications with the MERN (MongoDB, Express.js, React, Node.js) stack.",
+    "price": "400000",
+    "thumbnail": "http://blabla.com/mern_stack_dev.jpg",
+    "CategoryId": 5
+  }
+]

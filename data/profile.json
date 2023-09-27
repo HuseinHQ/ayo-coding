@@ -1,0 +1,42 @@
+[
+  {
+    "UserId": 1,
+    "fullName": "John Doe",
+    "birthDate": "1990-05-15",
+    "address": "123 Main Street, Cityville",
+    "phone": "+1234567890",
+    "isActive": true
+  },
+  {
+    "UserId": 2,
+    "fullName": "Alice Smith",
+    "birthDate": "1985-08-22",
+    "address": "456 Oak Avenue, Townsville",
+    "phone": "+9876543210",
+    "isActive": true
+  },
+  {
+    "UserId": 3,
+    "fullName": "Bob Johnson",
+    "birthDate": "1992-02-10",
+    "address": "789 Pine Road, Villagetown",
+    "phone": "+1122334455",
+    "isActive": false
+  },
+  {
+    "UserId": 4,
+    "fullName": "Eva Davis",
+    "birthDate": "1988-11-30",
+    "address": "101 Cedar Lane, Hamletville",
+    "phone": "+9988776655",
+    "isActive": true
+  },
+  {
+    "UserId": 5,
+    "fullName": "Charlie Brown",
+    "birthDate": "1995-06-18",
+    "address": "202 Elm Street, Boroughburg",
+    "phone": "+1123456789",
+    "isActive": false
+  }
+]
