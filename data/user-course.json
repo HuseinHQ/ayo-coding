@@ -1,82 +1,102 @@
 [
   {
     "UserId": 3,
-    "CourseId": 5
+    "CourseId": 5,
+    "isComplete": true
   },
   {
     "UserId": 2,
-    "CourseId": 9
+    "CourseId": 9,
+    "isComplete": false
   },
   {
     "UserId": 1,
-    "CourseId": 7
+    "CourseId": 7,
+    "isComplete": true
   },
   {
     "UserId": 4,
-    "CourseId": 2
+    "CourseId": 2,
+    "isComplete": false
   },
   {
     "UserId": 3,
-    "CourseId": 8
+    "CourseId": 8,
+    "isComplete": true
   },
   {
     "UserId": 1,
-    "CourseId": 1
+    "CourseId": 1,
+    "isComplete": false
   },
   {
     "UserId": 2,
-    "CourseId": 10
+    "CourseId": 10,
+    "isComplete": true
   },
   {
     "UserId": 4,
-    "CourseId": 4
+    "CourseId": 4,
+    "isComplete": false
   },
   {
     "UserId": 5,
-    "CourseId": 6
+    "CourseId": 6,
+    "isComplete": true
   },
   {
     "UserId": 1,
-    "CourseId": 3
+    "CourseId": 3,
+    "isComplete": false
   },
   {
     "UserId": 3,
-    "CourseId": 7
+    "CourseId": 7,
+    "isComplete": true
   },
   {
     "UserId": 5,
-    "CourseId": 2
+    "CourseId": 2,
+    "isComplete": false
   },
   {
     "UserId": 2,
-    "CourseId": 9
+    "CourseId": 9,
+    "isComplete": true
   },
   {
     "UserId": 4,
-    "CourseId": 1
+    "CourseId": 1,
+    "isComplete": false
   },
   {
     "UserId": 3,
-    "CourseId": 5
+    "CourseId": 5,
+    "isComplete": true
   },
   {
     "UserId": 1,
-    "CourseId": 8
+    "CourseId": 8,
+    "isComplete": false
   },
   {
     "UserId": 5,
-    "CourseId": 3
+    "CourseId": 3,
+    "isComplete": true
   },
   {
     "UserId": 2,
-    "CourseId": 6
+    "CourseId": 6,
+    "isComplete": false
   },
   {
     "UserId": 1,
-    "CourseId": 10
+    "CourseId": 10,
+    "isComplete": true
   },
   {
     "UserId": 4,
-    "CourseId": 4
+    "CourseId": 4,
+    "isComplete": false
   }
 ]

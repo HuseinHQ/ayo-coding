@@ -3,35 +3,30 @@
     "username": "john_doe",
     "email": "john.doe@example.com",
     "password": "securepassword1",
-    "role": "user",
-    "profilePicture": "http://blabla.com/john_doe.jpg"
+    "role": "user"
   },
   {
     "username": "alice_smith",
     "email": "alice.smith@example.com",
     "password": "strongpassword2",
-    "role": "user",
-    "profilePicture": "http://blabla.com/alice_smith.jpg"
+    "role": "user"
   },
   {
     "username": "admin_user",
     "email": "admin.user@example.com",
     "password": "adminpassword",
-    "role": "admin",
-    "profilePicture": "http://blabla.com/admin_user.jpg"
+    "role": "admin"
   },
   {
     "username": "tech_guru",
     "email": "tech.guru@example.com",
     "password": "techpassword",
-    "role": "user",
-    "profilePicture": "http://blabla.com/tech_guru.jpg"
+    "role": "user"
   },
   {
     "username": "jane_davis",
     "email": "jane.davis@example.com",
     "password": "secure1234",
-    "role": "user",
-    "profilePicture": "http://blabla.com/jane_davis.jpg"
+    "role": "user"
   }
 ]
