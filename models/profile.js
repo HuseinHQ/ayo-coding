@@ -20,8 +20,14 @@ module.exports = (sequelize, DataTypes) => {
     birthDate: DataTypes.DATE,
     address: DataTypes.STRING,
     phone: DataTypes.STRING,
-    profilePicture: DataTypes.STRING
+    profilePicture: DataTypes.STRING,
+    isMember: DataTypes.BOOLEAN
   }, {
+    hooks: {
+      beforeCreate(profile) {
+        profile.isMember = false;
+      }
+    },
     sequelize,
     modelName: 'Profile',
   });

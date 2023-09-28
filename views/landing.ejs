@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayo Coding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    /* Gaya kustom ada di sini */
+    body {
+      padding-top: 56px; /* Sesuaikan dengan tinggi navbar yang tetap */
+    }
+
+    .hero-section {
+      background-image: url('https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8cHJvZ3JhbXx8fHx8fDE2OTU4OTE5NTM&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600'); /* URL gambar sementara */
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 150px 0;
+    }
+
+    .course-overview {
+      padding: 80px 0;
+    }
+
+    .cta-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <%- include('./components/_navbar') %>
+
+  <!-- Bagian Hero -->
+  <div class="hero-section">
+    <h1 class="display-4" style="font-weight: bold;">Belajar Pemrograman Online</h1>
+    <p class="lead" style="font-weight: bold;">Mulai perjalanan Anda untuk menjadi programmer terampil dengan kursus online kami.</p>
+    <a class="btn btn-primary btn-lg" href="/register">Daftar Sekarang</a>
+  </div>
+
+  <!-- Bagian Overview Kursus -->
+  <div id="overview" class="course-overview">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="display-4">Ikhtisar Kursus</h2>
+          <p class="lead">Kursus pemrograman kami mencakup berbagai topik, mulai dari tingkat pemula hingga tingkat lanjutan. Baik Anda baru dalam pemrograman atau ingin meningkatkan keterampilan Anda, kami memiliki kursus untuk Anda.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1521898284481-a5ec348cb555?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY5NTg5MjYwNA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt="Overview Kursus" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bagian Call to Action -->
+  <div id="enroll" class="cta-section">
+    <div class="container">
+      <h2 class="display-4">Daftar Sekarang</h2>
+      <p class="lead">Jangan lewatkan kesempatan untuk meningkatkan keterampilan pemrograman Anda. Bergabunglah dengan kursus online kami hari ini!</p>
+      <a class="btn btn-primary btn-lg" href="/register">Mulai</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-d7rMz4+u2m1OftOp5PjBTTwPgIBhqVxOBzHwBt7ZZsBfE1+I3q2OcvPImC2iIkJ" crossorigin="anonymous"></script>
+</body>
+</html>

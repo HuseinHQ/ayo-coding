@@ -1,17 +1,22 @@
 [
   {
-    "name": "Web Development"
+    "name": "Web Development",
+    "description": "Learn the essentials of building websites and web applications. Cover topics such as HTML, CSS, and front-end and back-end development."
   },
   {
-    "name": "Python Programming"
+    "name": "Python Programming",
+    "description": "Explore the versatile and powerful Python programming language. Cover topics ranging from basic syntax to advanced concepts and applications."
   },
   {
-    "name": "JavaScript Frameworks"
+    "name": "JavaScript Frameworks",
+    "description": "Dive into modern JavaScript frameworks and libraries like React, Angular, and Vue.js. Build dynamic and interactive user interfaces for web applications."
   },
   {
-    "name": "Mobile App Development"
+    "name": "Mobile App Development",
+    "description": "Discover the world of mobile app development. Learn how to create native or cross-platform mobile apps using technologies like React Native or Flutter."
   },
   {
-    "name": "Data Science and Machine Learning"
+    "name": "Data Science and Machine Learning",
+    "description": "Explore the field of data science and machine learning. Learn how to analyze and interpret data, build predictive models, and apply machine learning algorithms."
   }
 ]

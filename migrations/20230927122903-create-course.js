@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       thumbnail: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       CategoryId: {
         type: Sequelize.INTEGER,

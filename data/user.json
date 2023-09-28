@@ -2,31 +2,31 @@
   {
     "username": "john_doe",
     "email": "john.doe@example.com",
-    "password": "securepassword1",
+    "password": "$2a$08$BMF28WF9V4I4B/nn0OVHi.FG4gGHPxfcpEUruIavg8qibhLE6bOh6",
     "role": "user"
   },
   {
     "username": "alice_smith",
     "email": "alice.smith@example.com",
-    "password": "strongpassword2",
+    "password": "$2a$08$bwN4GCdBf6gmhzx/bNoune5pJjy6/5w.HdoyNZRNEI5YoyTfqXZPq",
     "role": "user"
   },
   {
     "username": "admin_user",
     "email": "admin.user@example.com",
-    "password": "adminpassword",
+    "password": "$2a$08$Y9BqrUKiBz2J/Zs6DepVpeUfe82Q.XgnB4a36xHuSHwAHdd7LataO",
     "role": "admin"
   },
   {
     "username": "tech_guru",
     "email": "tech.guru@example.com",
-    "password": "techpassword",
+    "password": "$2a$08$dFuNtkk69uHqbG7fLrkqgu8jY9P3y7rRHzwGcBREKey4AZmHRnZRm",
     "role": "user"
   },
   {
     "username": "jane_davis",
     "email": "jane.davis@example.com",
-    "password": "secure1234",
+    "password": "$2a$08$8luc93PQoeMxCydTUSjoROchUlwMSWORW0zXIeu7U2S5y0OKouP.y",
     "role": "user"
   }
 ]
