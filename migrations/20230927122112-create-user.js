@@ -11,7 +11,10 @@ module.exports = {
       },
       username: {
         type: Sequelize.STRING,
-        unique: true
+        unique: {
+          args: true,
+          msg: 'username already used'
+        }
       },
       email: {
         type: Sequelize.STRING,

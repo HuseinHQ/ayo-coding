@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Kelas - AyoCoding</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
 
   <!-- Navbar -->
-  <%- include('./components/_navbar') %>
+  <%- include('./components/_navbar', { isLoggedIn, userId }) %>
 
-  <!-- Daftar Kelas Section -->
-  <div class="container" style="margin-top: 5rem;">
-    <h2 class="mb-4">Daftar Kelas</h2>
+  <%- include('./components/_searchbar.ejs') %>
 
-    <!-- Card Deck -->
-    <div class="row mb-4">
-      <% data.forEach(el => { %>
-      <div class="col-md-6 mb-4">
-        <div class="card" style="height: 36rem;">
-          <img src="<%= el.thumbnail %>" class="card-img-top" alt="art-image" style="height: 25rem; object-fit: cover;">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><%= el.title %></h5>
-            <p class="card-text max-lines"><%= el.description %></p>
-            <div class="mt-auto d-flex gap-2">
-              <a href="/courses/<%= el.id %>" class="btn btn-primary">See Detail</a>
+
+    <!-- Daftar Kelas Section -->
+    <div class="container">
+      <h2 class="mb-4">Daftar Kelas</h2>
+      <!-- Alert -->
+      <% if (alert) { %>
+      <div class="alert alert-secondary"><%= alert %></div>
+      <% } %>
+      <!-- Card Deck -->
+      <div class="row mb-4">
+        <% data.forEach(el=> { %>
+          <div class="col-md-6 mb-4">
+            <div class="card" style="height: 36rem;">
+              <img src="<%= el.thumbnail %>" class="card-img-top" alt="art-image"
+                style="height: 25rem; object-fit: cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <%= el.title %>
+                </h5>
+                <p class="card-text max-lines">
+                  <%= el.description %>
+                </p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="/courses/<%= el.id %>" class="btn btn-primary">See Detail</a>
+                  <% if (role === 'admin') { %>
+                    <a href="/courses/<%= el.id %>/edit" class="btn btn-success">Edit</a>
+                    <a href="/courses/<%= el.id %>/delete" class="btn btn-danger">Delete</a>
+                  <% } %>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <% }) %>
       </div>
-      <% }) %>
     </div>
-  </div>
 
-  <!-- Bootstrap JS Bundle (Popper included) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-d7rMz4+u2m1OftOp5PjBTTwPgIBhqVxOBzHwBt7ZZsBfE1+I3q2OcvPImC2iIkJ" crossorigin="anonymous"></script>
+    <%- include('./components/_footer.ejs') %>
+
+    <!-- Bootstrap JS Bundle (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-d7rMz4+u2m1OftOp5PjBTTwPgIBhqVxOBzHwBt7ZZsBfE1+I3q2OcvPImC2iIkJ"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>

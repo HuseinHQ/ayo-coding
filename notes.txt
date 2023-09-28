@@ -7,7 +7,7 @@ LIST PATH:
 /courses             - tampilkan seluruh courses
 /courses/add         - menambah course (khusus admin)
 /courses/:id         - menampilkan detail course
-/course/:id/buy      - membeli course
+/courses/:id/buy     - membeli course
 /courses/:id/edit    - mengedit course (khusus admin)
 /courses/:id/delete  - mendelete course (khusus admin)
 
@@ -53,3 +53,24 @@ PASSWORD USER
 ]
 
 https://source.unsplash.com/300x300/?code
+
+      .then(data => {
+        let flag = false;
+        data.forEach(el => {
+          el.dataValues.UserCourses.forEach(i => {
+            if (i.dataValues.CourseId == CourseId) {
+              const alert = 'Kamu sudah memiliki kelas ini'
+              flag = true;
+              return res.redirect(`/courses/${CourseId}?alert=${alert}`)
+            }
+          })
+        })
+        if (flag === false) {
+          return UserCourse.create({ UserId, CourseId })
+        }
+      })
+      .then(() => {
+        const success = 'Berhasil membeli kelas'
+        res.redirect(`/courses/${CourseId}?alert=${success}`)
+      })
+      .catch(err => res.send(err));

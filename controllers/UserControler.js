@@ -1,5 +1,5 @@
 const bcryptjs = require('bcryptjs');
-const { User, Profile } = require('../models/');
+const { User, Profile, Course } = require('../models/');
 const { Op } = require('sequelize');
 
 class UserController {
@@ -24,7 +24,8 @@ class UserController {
 
           if (isPasswordValid) {
             req.session.userId = user.id;
-            return res.redirect('/');
+            req.session.role = user.role;
+            return res.redirect(`/`);
           } else {
             return res.redirect(`/login?err=${error}`)
           }
@@ -36,23 +37,100 @@ class UserController {
   }
 
   static registerPage(req, res) {
-    res.render('register');
+    const err = req.query.err
+    res.render('register', { err });
   }
 
   static registerPagePost(req, res) {
     const { username, email, password, fullName, birthDate, address, phone, profilePicture } = req.body;
-    let fkForProfile;
+    let UserId;
 
     User.create({ username, email, password })
       .then((data) => {
-        fkForProfile = data.id;
+        UserId = data.id;
 
-        return Profile.create({ fullName, birthDate, address, phone, profilePicture })
+        return Profile.create({ fullName, birthDate, address, phone, profilePicture, UserId })
       })
       .then(() => {
         res.redirect('/login');
       })
-      .catch(err => res.send(err));
+      .catch(err => {
+        if (err.name === 'SequelizeUniqueConstraintError') {
+          const error = err.errors.map(el => {
+            if (el.message.includes('username')) {
+              el.message = 'username sudah digunakan'
+            } else {
+              el.message = 'email sudah digunakan'
+            }
+            return el.message
+          });
+          res.redirect(`/register?err=${error}`)
+        } else if (err.name = 'SequelizeValidationError') {
+          const error = err.errors.map(el => el.message);
+
+          User.destroy({
+            where: { id: UserId }
+          })
+            .then(() => {
+              res.redirect(`/register?err=${error}`)
+            })
+            .catch(err => console.log(err));
+        } else {
+          res.send(err)
+        }
+      });
+  }
+
+  static userProfilePage(req, res) {
+    const userId = req.session.userId;
+    const isLoggedIn = userId ? true : false
+    const alert = req.query.alert
+
+    User.findByPk(userId, {
+      include: [Profile]
+    })
+      .then(data => {
+        res.render('user', { data, isLoggedIn, userId, alert })
+      })
+      .catch(err => {
+        res.send(err)
+      })
+  }
+
+  static myCourses(req, res) {
+    const id = req.session.userId
+    const role = req.session.role;
+    const isLoggedIn = role ? true : false
+
+    User.findByPk(id, {
+      include: [Course]
+    })
+      .then(data => {
+        res.render('mycourse', { data, role, isLoggedIn });
+      })
+      .catch(err => {
+        res.send(err);
+      })
+  }
+
+  static editProfile(req, res) {
+    const id = req.session.userId;
+    const { username, email, fullName, birthDate, address, phone, profilePicture } = req.body;
+
+    User.update({ username, email }, {
+      where: { id }
+    })
+      .then(() => {
+        return Profile.update({ fullName, birthDate, address, phone, profilePicture }, {
+          where: { UserId: id }
+        })
+      })
+      .then(() => {
+        res.redirect(`/users/${id}?alert=Profile berhasil diupdate!`)
+      })
+      .catch(err => {
+        res.send(err);
+      })
   }
 }
 

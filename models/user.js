@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsToMany(models.Course, {
         through: models.UserCourse
       })
+      User.hasMany(models.UserCourse)
     }
   }
   User.init({
@@ -28,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     hooks: {
       beforeCreate(user) {
         const salt = bcryptjs.genSaltSync(8);
-        const hash= bcryptjs.hashSync(user.password, salt);
+        const hash = bcryptjs.hashSync(user.password, salt);
         user.password = hash;
         user.role = 'user'
       }

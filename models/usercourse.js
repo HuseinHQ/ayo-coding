@@ -10,14 +10,26 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      UserCourse.belongsTo(models.User);
+      UserCourse.belongsTo(models.Course);
     }
   }
   UserCourse.init({
-    UserId: DataTypes.INTEGER,
-    CourseId: DataTypes.INTEGER,
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    CourseId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     isComplete: DataTypes.BOOLEAN
   }, {
+    hooks: {
+      beforeCreate(userCourse) {
+        userCourse.isComplete = false;
+      }
+    },
     sequelize,
     modelName: 'UserCourse',
   });

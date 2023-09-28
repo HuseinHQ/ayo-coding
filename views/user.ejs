@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <%- include('./components/_navbar.ejs', { isLoggedIn, userId }) %>
+
+  <div class="container mb-5" style="margin-top: 5rem;">
+    <h2>User Profile</h2>
+    <% if (alert) { %>
+      <div class="alert alert-success"><%= alert %></div>
+    <% } %>
+    <form action="/users/<%= userId %>/edit" method="post">
+      <div class="row">
+        <!-- Column 1 -->
+        <div class="col-md-6">
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" name="username" value="<%= data.username %>">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" class="form-control" name="email" value="<%= data.email %>">
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" name="password" value="********" disabled>
+          </div>
+
+          <!-- Role -->
+          <div class="mb-3">
+            <label for="role" class="form-label">Role:</label>
+            <input type="text" class="form-control" name="role" value="<%= data.role %>" disabled>
+          </div>
+
+          <% console.log(data) %>
+          <!-- Is Member -->
+          <div class="mb-3">
+            <label for="isMember" class="form-label">Is Member:</label>
+            <select class="form-control" name="isMember" disabled>
+              <option value="true" <%= data.Profile?.isMember ? 'selected' : '' %>>Yes</option>
+              <option value="false" <%= data.Profile?.isMember ? '' : 'selected' %>>No</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-6">
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name:</label>
+            <input type="text" class="form-control" name="fullName" value="<%= data.Profile.fullName %>">
+          </div>
+
+          <!-- Birth Date -->
+          <div class="mb-3">
+            <label for="birthDate" class="form-label">Birth Date:</label>
+            <input type="date" class="form-control" name="birthDate" value="<%= data.Profile.dateFormat %>">
+          </div>
+
+          <!-- Address -->
+          <div class="mb-3">
+            <label for="address" class="form-label">Address:</label>
+            <input type="text" class="form-control" name="address" value="<%= data.Profile.address %>">
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="text" class="form-control" name="phone" value="<%= data.Profile.phone %>">
+          </div>
+
+          <!-- Profile Picture -->
+          <div class="mb-3">
+            <label for="profilePicture" class="form-label">Profile Picture:</label>
+            <input type="text" class="form-control" name="profilePicture" value="<%= data.Profile.profilePicture %>">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-d7rMz4+u2m1OftOp5PjBTTwPgIBhqVxOBzHwBt7ZZsBfE1+I3q2OcvPImC2iIkJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

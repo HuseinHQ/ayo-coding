@@ -41,8 +41,11 @@
   <main class="w-100 m-auto">
     <form action="/register" method="post">
       <img src="https://cdn-icons-png.flaticon.com/512/4997/4997543.png" alt="code-logo" width="100" class="mx-auto d-block mb-3">
-
       <h1 class="h3 mb-5 fw-normal text-center">Register</h1>
+
+      <% if (err) { %>
+        <p class="alert alert-danger w-auto"><%= err %><p/>
+      <% } %>
   
       <div class="form-group">
         <div class="form-floating mb-1">
