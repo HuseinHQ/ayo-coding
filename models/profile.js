@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     get dateFormat() {
       return this.birthDate.toISOString().split('T')[0];
     }
+
+    getAccountYears() {
+      return this.createdAt.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+    }
   }
   Profile.init({
     UserId: {

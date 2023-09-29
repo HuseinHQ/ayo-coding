@@ -18,9 +18,16 @@ class CourseController {
       option.where.title = { [Op.iLike]: `%${search}%` }
     }
 
-    Course.findAll(option)
+    let totalCourse;
+
+    Course.getTotalCourse(option)
       .then(data => {
-        res.render('courses', { data, isLoggedIn, role, userId, alert });
+        totalCourse = data;
+
+        return Course.findAll(option)
+      })
+      .then(data => {
+        res.render('courses', { data, isLoggedIn, role, userId, alert, totalCourse });
       })
       .catch(err => res.send(err));
   }

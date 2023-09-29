@@ -17,6 +17,15 @@ module.exports = (sequelize, DataTypes) => {
       Course.belongsTo(models.Category)
       Course.hasMany(models.UserCourse)
     }
+
+    static getTotalCourse(option) {
+      return this.findOne({
+        attributes: [
+          [sequelize.fn('COUNT', sequelize.col('id')), 'totalCourse']
+        ],
+        ...option
+      })
+    }
   }
   Course.init({
     title: DataTypes.STRING,

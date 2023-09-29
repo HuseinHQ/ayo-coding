@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Kelas - AyoCoding</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -20,6 +19,7 @@
     <!-- Daftar Kelas Section -->
     <div class="container">
       <h2 class="mb-4">Daftar Kelas</h2>
+      <h3 class="mb-4">Total Kelas: <%= totalCourse.dataValues.totalCourse %></h3>
       <!-- Alert -->
       <% if (alert) { %>
       <div class="alert alert-secondary"><%= alert %></div>

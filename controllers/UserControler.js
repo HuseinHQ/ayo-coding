@@ -106,7 +106,7 @@ class UserController {
       include: [Course]
     })
       .then(data => {
-        res.render('mycourse', { data, role, isLoggedIn });
+        res.render('mycourse', { data, role, isLoggedIn, userId: id });
       })
       .catch(err => {
         res.send(err);
@@ -129,7 +129,12 @@ class UserController {
         res.redirect(`/users/${id}?alert=Profile berhasil diupdate!`)
       })
       .catch(err => {
-        res.send(err);
+        if (err.name = 'SequelizeValidationError') {
+          const error = err.errors.map(el => el.message);
+          res.redirect(`/users/${id}?alert=${error}`)
+        } else {
+          res.send(err);
+        }
       })
   }
 }
