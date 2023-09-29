@@ -24,6 +24,9 @@
       <% if (alert) { %>
       <div class="alert alert-secondary"><%= alert %></div>
       <% } %>
+      <% if (role == 'admin') { %>
+        <a href="/courses/add" class="btn btn-primary mb-3">Add course</a>
+      <% } %>
       <!-- Card Deck -->
       <div class="row mb-4">
         <% data.forEach(el=> { %>

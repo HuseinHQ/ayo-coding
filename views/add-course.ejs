@@ -13,8 +13,8 @@
   <%- include('./components/_navbar.ejs', { isLoggedIn, userId }) %>
 
     <div class="container mb-5" style="margin-top: 5rem;">
-      <h2>Edit Course</h2>
-        <form action="/courses/<%= data.id %>/edit" method="post">
+      <h2>Add Course</h2>
+        <form action="/courses/add" method="post">
           <div class="row">
 
             <% if (alert) { %>
@@ -24,38 +24,37 @@
             <!-- Title -->
             <div class="mb-3">
               <label for="title" class="form-label">Title:</label>
-              <input type="text" class="form-control" name="title" value="<%= data.title %>">
+              <input type="text" class="form-control" name="title"">
             </div>
 
             <!-- Description -->
             <div class="mb-3">
               <label for="description" class="form-label">Description:</label>
-              <input type="text" class="form-control" name="description" value="<%= data.description %>">
+              <input type="text" class="form-control" name="description">
             </div>
 
             <!-- Price -->
             <div class="mb-3">
               <label for="price" class="form-label">Price:</label>
-              <input type="number" class="form-control" name="price" value="<%= data.price %>">
+              <input type="number" class="form-control" name="price">
             </div>
 
             <!-- Thumbnail -->
             <div class="mb-3">
               <label for="thumbnail" class="form-label">Thumbnail:</label>
-              <input type="text" class="form-control" name="thumbnail" value="<%= data.thumbnail %>">
+              <input type="text" class="form-control" name="thumbnail">
             </div>
 
             <!-- Category -->
             <div class="mb-3">
               <label for="CategoryId" class="form-label">Category:</label>
               <select class="form-control" name="CategoryId">
-                <option disabled>-- Select Category --</option>
+                <option selected disabled>-- Select Category --</option>
                 <% category.forEach(el=> { %>
-                  <option value="<%= el.id %>" <%=el.id==data.CategoryId ? 'selected' : '' %>><%= el.name %></option>
+                  <option value="<%= el.id %>"><%= el.name %></option>
                   <% }) %>
               </select>
             </div>
-
 
             <button type="submit" class="btn btn-primary">Update Profile</button>
         </form>

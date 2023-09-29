@@ -28,13 +28,84 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Course.init({
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    thumbnail: DataTypes.TEXT,
-    CategoryId: DataTypes.INTEGER,
-    rating: DataTypes.FLOAT
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Title is required'
+        },
+        notEmpty: {
+          msg: 'Title is required'
+        }
+      }
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Desciption is required'
+        },
+        notEmpty: {
+          msg: 'Description is required'
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Price is required'
+        },
+        notEmpty: {
+          msg: 'Price is required'
+        }
+      }
+    },
+    thumbnail: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Thumbnail is required'
+        },
+        notEmpty: {
+          msg: 'Thumbnail is required'
+        }
+      }
+    },
+    CategoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Category is required'
+        },
+        notEmpty: {
+          msg: 'Category is required'
+        }
+      }
+    },
+    rating: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Rating is required'
+        },
+        notEmpty: {
+          msg: 'Rating is required'
+        }
+      }
+    }
   }, {
+    hooks: {
+      beforeCreate(course) {
+        course.rating = 0;
+      }
+    },
     sequelize,
     modelName: 'Course',
   });

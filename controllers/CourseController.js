@@ -81,6 +81,7 @@ class CourseController {
     let category;
     const isLoggedIn = req.session.userId ? true : false
     const userId = req.session.userId
+    const { alert } = req.query;
 
     Category.findAll()
       .then(data => {
@@ -89,7 +90,7 @@ class CourseController {
         return Course.findByPk(id)
       })
       .then(data => {
-        res.render('edit-course', { data, category, isLoggedIn, userId })
+        res.render('edit-course', { data, category, isLoggedIn, userId, alert })
       })
       .catch(err => {
         res.send(err)
@@ -107,7 +108,12 @@ class CourseController {
         res.redirect('/courses?alert=Course berhasil diedit')
       })
       .catch(err => {
-        res.send(err);
+        if (err.name = 'SequelizeValidationError') {
+          const alert = err.errors.map(el => el.message);
+          res.redirect(`/courses/${id}/edit?alert=${alert}`)
+        } else {
+          res.send(err);
+        }
       })
   }
 
@@ -122,6 +128,38 @@ class CourseController {
       })
       .catch(err => {
         res.send(err);
+      })
+  }
+
+  static addCoursePage(req, res) {
+    const userId = req.session.userId
+    const isLoggedIn = userId ? true : false
+    const { alert } = req.query
+
+    Category.findAll()
+      .then(category => {
+        res.render('add-course', { category, userId, isLoggedIn, alert })
+      })
+      .catch(err => {
+        res.send(err)
+      })
+  }
+
+  static addCourse(req, res) {
+    const { title, description, price, thumbnail, CategoryId } = req.body;
+
+    Course.create({ title, description, price, thumbnail, CategoryId })
+      .then(() => {
+        const alert = 'Berhasil menambah kelas'
+        res.redirect(`/courses?alert=${alert}`)
+      })
+      .catch(err => {
+        if (err.name === 'SequelizeValidationError') {
+          const alert = err.errors.map(el => el.message)
+          res.redirect(`/courses/add?alert=${alert}`)
+        } else {
+          res.send(err)
+        }
       })
   }
 }

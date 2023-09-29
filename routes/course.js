@@ -21,6 +21,8 @@ const isAdmin = (req, res, next) => {
 }
 
 router.get('/', CourseController.coursePage);
+router.get('/add', isAdmin, CourseController.addCoursePage);
+router.post('/add', isAdmin, CourseController.addCourse);
 router.get('/:id', CourseController.courseDetailPage);
 router.get('/:id/buy', logged, CourseController.courseBuy)
 router.get('/:id/edit', isAdmin, CourseController.editCoursePage);
