@@ -37,11 +37,12 @@ class CourseController {
     const role = req.session.role;
     const isLoggedIn = role ? true : false;
     const userId = req.session.userId;
+    const { alert } = req.query;
 
     console.log(id);
     Course.findByPk(id)
       .then(data => {
-        res.render('course-detail', { data, role, isLoggedIn, userId, intToRupiah });
+        res.render('course-detail', { data, role, isLoggedIn, userId, intToRupiah, alert });
       })
       .catch(err => res.send(err));
   }
