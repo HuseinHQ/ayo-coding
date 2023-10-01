@@ -73,3 +73,16 @@ Now, your project should be up and running. Access it through your browser or ot
 - If you want to log in with an "admin" role, you can use the following credentials:
   - **Username:** admin_user
   - **Password:** adminpassword
+
+## Screenshots
+
+<p float="left">
+  <h3>Landing Page</h3>
+  <img src="./assets/landing-page.png" />
+  <h3>Login Page</h3>
+  <img src="./assets/register-page.png" />
+  <h3>Register Page</h3>
+  <img src="./assets/login-page.png" />
+  <h3>Course List Page</h3>
+  <img src="./assets/course-list-page.png" />
+</p>
