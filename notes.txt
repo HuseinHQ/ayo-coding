@@ -54,23 +54,6 @@ PASSWORD USER
 
 https://source.unsplash.com/300x300/?code
 
-      .then(data => {
-        let flag = false;
-        data.forEach(el => {
-          el.dataValues.UserCourses.forEach(i => {
-            if (i.dataValues.CourseId == CourseId) {
-              const alert = 'Kamu sudah memiliki kelas ini'
-              flag = true;
-              return res.redirect(`/courses/${CourseId}?alert=${alert}`)
-            }
-          })
-        })
-        if (flag === false) {
-          return UserCourse.create({ UserId, CourseId })
-        }
-      })
-      .then(() => {
-        const success = 'Berhasil membeli kelas'
-        res.redirect(`/courses/${CourseId}?alert=${success}`)
-      })
-      .catch(err => res.send(err));
+Improve:
+- Fitur course langganan (bertahan 30 hari)
+- 
